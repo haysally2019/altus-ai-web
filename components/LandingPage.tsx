@@ -654,7 +654,7 @@ export const LandingPage: React.FC = () => {
                         </div>
                         <p className="text-brand-200 text-sm mb-10 line-through opacity-60 font-medium">Standard Price: $899/mo</p>
                         
-                        <Button onClick={handleCtaClick} className="w-full bg-white text-brand-700 hover:bg-slate-50 font-bold text-xl h-16 shadow-xl shadow-brand-900/20 border-2 border-transparent hover:border-brand-200" size="lg">
+                        <Button onClick={handleCtaClick} variant="primary" className="w-full font-bold text-xl h-16 shadow-xl" size="lg">
                            Start Free Trial
                         </Button>
                         <p className="text-xs text-brand-200 mt-6 opacity-80 font-medium flex items-center justify-center gap-2">
@@ -705,7 +705,7 @@ export const LandingPage: React.FC = () => {
             <h2 className="text-5xl md:text-6xl font-extrabold mb-8 tracking-tight leading-tight">Stop letting adjusters <br/>win.</h2>
             <p className="text-2xl text-brand-100 mb-12 max-w-3xl mx-auto font-light">Join 500+ restoration contractors using Gemini to increase their claim value by 20%.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-                <Button onClick={handleCtaClick} className="bg-white text-brand-600 hover:bg-slate-50 shadow-2xl shadow-brand-900/20 border-none text-xl font-bold px-12 h-16" size="lg">Start Free Trial</Button>
+                <Button onClick={handleCtaClick} variant="primary" className="shadow-2xl text-xl font-bold px-12 h-16" size="lg">Start Free Trial</Button>
             </div>
             <div className="mt-12 flex justify-center gap-8 text-brand-200 font-medium">
               <span className="flex items-center gap-2"><Lock className="w-4 h-4"/> SOC 2 Secure</span>
