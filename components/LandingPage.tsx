@@ -120,7 +120,7 @@ export const LandingPage: React.FC = () => {
               <Button type="submit" className="w-full font-bold">Send Message</Button>
             </form>
             <div className="flex items-center justify-center gap-6 pt-4 border-t border-slate-100 text-slate-500 text-sm">
-              <span className="flex items-center gap-2"><Mail className="w-4 h-4" /> support@altus.ai</span>
+              <span className="flex items-center gap-2"><Mail className="w-4 h-4" /> support@rafter.ai</span>
             </div>
           </div>
         );
@@ -131,7 +131,7 @@ export const LandingPage: React.FC = () => {
               <h4 className="flex items-center gap-2 font-bold text-brand-800 mb-2">
                 <FileText className="w-5 h-5" /> Live Database Access
               </h4>
-              <p className="text-brand-700 text-sm">Altus AI maintains real-time access to the complete ICC digital library, including state-specific amendments.</p>
+              <p className="text-brand-700 text-sm">RAFTER AI maintains real-time access to the complete ICC digital library, including state-specific amendments.</p>
             </div>
             <div className="space-y-4">
                <h4 className="font-bold text-slate-900">Supported Code Books</h4>
@@ -156,7 +156,7 @@ export const LandingPage: React.FC = () => {
              </div>
              <p className="text-lg font-medium text-slate-900">We are building the operating system for the modern restoration contractor.</p>
              <p className="text-slate-600 leading-relaxed">
-               Altus AI was founded in 2023 by a team of former insurance adjusters, roofing business owners, and Google engineers. We saw firsthand how much money contractors lose due to "scope gaps"—valid line items that adjusters omit simply because they can.
+               RAFTER AI was founded in 2023 by a team of former insurance adjusters, roofing business owners, and Google engineers. We saw firsthand how much money contractors lose due to "scope gaps"—valid line items that adjusters omit simply because they can.
              </p>
              <p className="text-slate-600 leading-relaxed">
                Our mission is to level the playing field. By arming contractors with the same level of data sophistication that insurance carriers use, we ensure fair payouts for fair work.
@@ -187,8 +187,8 @@ export const LandingPage: React.FC = () => {
              </div>
              <p><strong>Last Updated: October 2024</strong></p>
              <p>This is a placeholder for the full legal text. In a production environment, this would contain the complete {activeModal === 'privacy' ? 'Privacy Policy' : activeModal === 'terms' ? 'Terms of Service' : 'Security Documentation'}.</p>
-             <p>Altus AI prioritizes data sovereignty. Your estimates, client data, and pricing strategies are never shared with third parties or insurance carriers. We utilize Google Cloud Platform (GCP) with AES-256 encryption at rest and TLS 1.3 in transit.</p>
-             <p>For specific compliance requests (HIPAA, GDPR, CCPA), please contact our legal team at legal@altus.ai.</p>
+             <p>RAFTER AI prioritizes data sovereignty. Your estimates, client data, and pricing strategies are never shared with third parties or insurance carriers. We utilize Google Cloud Platform (GCP) with AES-256 encryption at rest and TLS 1.3 in transit.</p>
+             <p>For specific compliance requests (HIPAA, GDPR, CCPA), please contact our legal team at legal@rafter.ai.</p>
           </div>
         );
       default:
@@ -200,7 +200,7 @@ export const LandingPage: React.FC = () => {
      switch(activeModal) {
         case 'contact': return 'Contact Support';
         case 'code-database': return 'ICC Code Database';
-        case 'about': return 'About Altus AI';
+        case 'about': return 'About RAFTER AI';
         case 'privacy': return 'Privacy Policy';
         case 'terms': return 'Terms of Service';
         case 'security': return 'Security & Compliance';
@@ -229,7 +229,7 @@ export const LandingPage: React.FC = () => {
                 <Zap className="text-white w-6 h-6 fill-white" />
               </div>
               <div className="flex flex-col">
-                 <span className="font-bold text-xl tracking-tight text-slate-900 leading-none">Altus AI</span>
+                 <span className="font-bold text-xl tracking-tight text-slate-900 leading-none">RAFTER AI</span>
                  <span className="text-[10px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-purple-600 uppercase tracking-widest mt-0.5">Roofing Software</span>
               </div>
             </div>
@@ -283,7 +283,7 @@ export const LandingPage: React.FC = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed font-light">
-              Stop letting adjusters dictate your margins. Altus AI instantly audits scopes, identifies missed line items, and writes <span className="font-semibold text-brand-600">code-backed rebuttals</span> in seconds.
+              Stop letting adjusters dictate your margins. RAFTER AI instantly audits scopes, identifies missed line items, and writes <span className="font-semibold text-brand-600">code-backed rebuttals</span> in seconds.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-5 max-w-lg mx-auto">
@@ -449,7 +449,7 @@ export const LandingPage: React.FC = () => {
             <div className="text-center max-w-3xl mx-auto mb-20">
                <h2 className="text-sm font-bold text-brand-400 tracking-widest uppercase mb-4">Complete Autopilot</h2>
                <p className="text-4xl md:text-5xl font-extrabold text-white mb-8 tracking-tight">Run your business <br/>while you sleep.</p>
-               <p className="text-xl text-slate-400 font-light leading-relaxed">Altus AI isn't just a supplement tool. It's a full-service employee that answers phones and writes estimates 24/7.</p>
+               <p className="text-xl text-slate-400 font-light leading-relaxed">RAFTER AI isn't just a supplement tool. It's a full-service employee that answers phones and writes estimates 24/7.</p>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-20">
@@ -510,7 +510,7 @@ export const LandingPage: React.FC = () => {
                          <div className="flex justify-between items-start mb-4 border-b border-slate-200 pb-2">
                             <div className="flex items-center gap-2">
                                <div className="w-6 h-6 bg-brand-600 rounded flex items-center justify-center"><Zap className="w-3 h-3 text-white"/></div>
-                               <span className="text-slate-900 font-bold text-xs">Altus AI Estimate</span>
+                               <span className="text-slate-900 font-bold text-xs">RAFTER AI Estimate</span>
                             </div>
                             <span className="text-slate-400 text-[10px]">#EST-2024-89</span>
                          </div>
@@ -674,7 +674,7 @@ export const LandingPage: React.FC = () => {
                {[
                  { q: "Does this work with Xactimate and Symbility?", a: "Yes. You simply upload the PDF scope exported from any estimating software. Our AI reads the line items directly from the document." },
                  { q: "Is my data secure?", a: "Absolutely. We use bank-level encryption and are Google Cloud Partners. Your estimates and client data are never shared with insurance carriers." },
-                 { q: "Do I need to be a coding expert?", a: "No. The interface is drag-and-drop. If you can upload a file, you can use Altus AI." },
+                 { q: "Do I need to be a coding expert?", a: "No. The interface is drag-and-drop. If you can upload a file, you can use RAFTER AI." },
                  { q: "Can I cancel anytime?", a: "Yes. There are no long-term contracts. You can upgrade, downgrade, or cancel your subscription instantly from your dashboard." }
                ].map((faq, i) => (
                  <div key={i} className="border border-slate-700 rounded-xl overflow-hidden bg-slate-800/30">
@@ -723,7 +723,7 @@ export const LandingPage: React.FC = () => {
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-3 mb-8 text-white">
                <div className="w-10 h-10 bg-brand-600 rounded-lg flex items-center justify-center"><Zap className="w-6 h-6 text-white" /></div>
-               <span className="font-bold text-2xl tracking-tight">Altus AI</span>
+               <span className="font-bold text-2xl tracking-tight">RAFTER AI</span>
             </div>
             <p className="text-base leading-relaxed mb-8 text-slate-500">The #1 AI platform for insurance restoration contractors. Maximize claims, automate supplements, and scale your business.</p>
             <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Technology Partners</div>
@@ -758,7 +758,7 @@ export const LandingPage: React.FC = () => {
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-4 mt-20 pt-8 border-t border-slate-900 text-sm text-center text-slate-600">
-            © 2024 Altus AI. Powered by Google Gemini. All rights reserved.
+            © 2024 RAFTER AI. Powered by Google Gemini. All rights reserved.
         </div>
       </footer>
     </div>
