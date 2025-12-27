@@ -608,59 +608,135 @@ export const LandingPage: React.FC = () => {
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-16">
                 <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Founder's Beta Access</h2>
-                <p className="text-xl text-slate-600">Secure our lowest price ever. Unlimited users, forever.</p>
+                <p className="text-xl text-slate-600">Lock in beta pricing for life. Never pay more as you scale.</p>
             </div>
 
-            <div className="max-w-5xl mx-auto bg-slate-900 rounded-3xl shadow-2xl shadow-brand-900/20 overflow-hidden flex flex-col md:flex-row transform hover:scale-[1.01] transition-transform duration-300">
-                {/* Left Side: Value Prop */}
-                <div className="p-10 md:p-14 md:w-3/5 flex flex-col justify-center relative">
-                   <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
-                   <div className="relative z-10">
-                       <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 w-fit shadow-lg shadow-orange-500/20">
-                          <Sparkles className="w-3 h-3 fill-current" /> Limited Beta Offer
+            <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                {/* Starter Plan */}
+                <div className="bg-slate-900 rounded-3xl shadow-xl overflow-hidden flex flex-col transform hover:scale-[1.02] transition-transform duration-300">
+                   <div className="p-8 flex-1">
+                       <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 shadow-lg shadow-orange-500/20">
+                          <Sparkles className="w-3 h-3 fill-current" /> Beta Pricing
                        </div>
-                       <h3 className="text-4xl md:text-5xl font-extrabold text-white mb-2 tracking-tight">Unlimited Users.</h3>
-                       <h3 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-200 to-white mb-8 tracking-tight">One Flat Rate.</h3>
-                       <p className="text-slate-300 mb-8 leading-relaxed text-lg">
-                          Most CRMs charge $50-$100 per user. We are disrupting the industry. Lock in this beta rate for life and never pay for additional seats as you scale.
-                       </p>
-                       <ul className="space-y-4">
+                       <h3 className="text-2xl font-extrabold text-white mb-2 tracking-tight">Starter</h3>
+                       <p className="text-slate-400 mb-6 text-sm">Perfect for small teams</p>
+
+                       <div className="flex items-baseline gap-1 mb-6">
+                          <span className="text-5xl font-black text-white tracking-tighter">$199</span>
+                          <span className="text-xl font-bold text-slate-400">/mo</span>
+                       </div>
+
+                       <ul className="space-y-3 mb-8">
                           {[
-                              "Unlimited Team Members",
+                              "Up to 5 Users",
                               "Unlimited Document Storage",
-                              "Priority Feature Access",
-                              "Dedicated Success Manager",
-                              "White Glove Onboarding"
+                              "AI Supplement Automation",
+                              "Code Database Access",
+                              "Email Support"
                           ].map((item, i) => (
-                              <li key={i} className="flex items-center gap-3 text-white font-medium text-lg">
-                                  <div className="bg-green-500/20 p-1.5 rounded-full"><Check className="w-5 h-5 text-green-400" /></div>
+                              <li key={i} className="flex items-center gap-3 text-slate-300 text-sm">
+                                  <div className="bg-green-500/20 p-1 rounded-full"><Check className="w-4 h-4 text-green-400" /></div>
                                   {item}
                               </li>
                           ))}
                        </ul>
                    </div>
+
+                   <div className="p-8 pt-0">
+                       <Button onClick={handleCtaClick} variant="primary" className="w-full font-bold h-12 shadow-xl">
+                          Start Free Trial
+                       </Button>
+                       <p className="text-xs text-slate-500 mt-4 text-center font-medium flex items-center justify-center gap-2">
+                          <Lock className="w-3 h-3" /> Lifetime Price Lock
+                       </p>
+                   </div>
                 </div>
 
-                {/* Right Side: Pricing */}
-                <div className="bg-gradient-to-br from-brand-600 to-brand-700 p-10 md:p-14 md:w-2/5 flex flex-col justify-center text-center text-white relative overflow-hidden border-t md:border-t-0 md:border-l border-white/10">
-                    <div className="absolute -top-24 -right-24 w-64 h-64 bg-white/10 rounded-full blur-[60px] animate-pulse-slow"></div>
-                    <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent opacity-30"></div>
-                    
-                    <div className="relative z-10">
-                        <p className="text-brand-200 font-bold uppercase tracking-widest text-sm mb-4">Early Access Price</p>
-                        <div className="flex items-baseline justify-center gap-1 mb-2">
-                           <span className="text-6xl font-black tracking-tighter">$299</span>
-                           <span className="text-2xl font-bold text-brand-200">/mo</span>
-                        </div>
-                        <p className="text-brand-200 text-sm mb-10 line-through opacity-60 font-medium">Standard Price: $899/mo</p>
-                        
-                        <Button onClick={handleCtaClick} variant="primary" className="w-full font-bold text-xl h-16 shadow-xl" size="lg">
-                           Start Free Trial
-                        </Button>
-                        <p className="text-xs text-brand-200 mt-6 opacity-80 font-medium flex items-center justify-center gap-2">
-                           <Lock className="w-3 h-3" /> Lifetime Price Lock Guarantee
-                        </p>
-                    </div>
+                {/* Growth Plan */}
+                <div className="bg-slate-900 rounded-3xl shadow-2xl overflow-hidden flex flex-col transform hover:scale-[1.02] transition-transform duration-300 border-2 border-brand-500 relative">
+                   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest shadow-lg">
+                      Most Popular
+                   </div>
+                   <div className="p-8 flex-1">
+                       <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 shadow-lg shadow-orange-500/20">
+                          <Sparkles className="w-3 h-3 fill-current" /> Beta Pricing
+                       </div>
+                       <h3 className="text-2xl font-extrabold text-white mb-2 tracking-tight">Growth</h3>
+                       <p className="text-slate-400 mb-6 text-sm">For growing businesses</p>
+
+                       <div className="flex items-baseline gap-1 mb-6">
+                          <span className="text-5xl font-black text-white tracking-tighter">$499</span>
+                          <span className="text-xl font-bold text-slate-400">/mo</span>
+                       </div>
+
+                       <ul className="space-y-3 mb-8">
+                          {[
+                              "Up to 15 Users",
+                              "Unlimited Document Storage",
+                              "AI Supplement Automation",
+                              "Code Database Access",
+                              "Priority Support",
+                              "Dedicated Success Manager"
+                          ].map((item, i) => (
+                              <li key={i} className="flex items-center gap-3 text-slate-300 text-sm">
+                                  <div className="bg-green-500/20 p-1 rounded-full"><Check className="w-4 h-4 text-green-400" /></div>
+                                  {item}
+                              </li>
+                          ))}
+                       </ul>
+                   </div>
+
+                   <div className="p-8 pt-0">
+                       <Button onClick={handleCtaClick} variant="primary" className="w-full font-bold h-12 shadow-xl">
+                          Start Free Trial
+                       </Button>
+                       <p className="text-xs text-slate-500 mt-4 text-center font-medium flex items-center justify-center gap-2">
+                          <Lock className="w-3 h-3" /> Lifetime Price Lock
+                       </p>
+                   </div>
+                </div>
+
+                {/* Enterprise Plan */}
+                <div className="bg-gradient-to-br from-brand-600 to-brand-700 rounded-3xl shadow-xl overflow-hidden flex flex-col transform hover:scale-[1.02] transition-transform duration-300 relative">
+                   <div className="absolute -top-24 -right-24 w-64 h-64 bg-white/10 rounded-full blur-[60px] animate-pulse-slow"></div>
+                   <div className="p-8 flex-1 relative z-10">
+                       <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 shadow-lg shadow-orange-500/20">
+                          <Sparkles className="w-3 h-3 fill-current" /> Beta Pricing
+                       </div>
+                       <h3 className="text-2xl font-extrabold text-white mb-2 tracking-tight">Enterprise</h3>
+                       <p className="text-brand-100 mb-6 text-sm">Unlimited everything</p>
+
+                       <div className="flex items-baseline gap-1 mb-6">
+                          <span className="text-5xl font-black text-white tracking-tighter">$999</span>
+                          <span className="text-xl font-bold text-brand-100">/mo</span>
+                       </div>
+
+                       <ul className="space-y-3 mb-8">
+                          {[
+                              "Unlimited Users",
+                              "Unlimited Document Storage",
+                              "AI Supplement Automation",
+                              "Code Database Access",
+                              "Priority Feature Access",
+                              "Dedicated Success Manager",
+                              "White Glove Onboarding"
+                          ].map((item, i) => (
+                              <li key={i} className="flex items-center gap-3 text-white text-sm font-medium">
+                                  <div className="bg-white/20 p-1 rounded-full"><Check className="w-4 h-4 text-white" /></div>
+                                  {item}
+                              </li>
+                          ))}
+                       </ul>
+                   </div>
+
+                   <div className="p-8 pt-0 relative z-10">
+                       <Button onClick={handleCtaClick} variant="primary" className="w-full font-bold h-12 shadow-xl bg-white text-brand-600 hover:bg-slate-50">
+                          Start Free Trial
+                       </Button>
+                       <p className="text-xs text-brand-100 mt-4 text-center font-medium flex items-center justify-center gap-2">
+                          <Lock className="w-3 h-3" /> Lifetime Price Lock
+                       </p>
+                   </div>
                 </div>
             </div>
          </div>
