@@ -618,21 +618,29 @@ export const LandingPage: React.FC = () => {
                        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 shadow-lg shadow-orange-500/20">
                           <Sparkles className="w-3 h-3 fill-current" /> Beta Pricing
                        </div>
-                       <h3 className="text-2xl font-extrabold text-white mb-2 tracking-tight">Starter</h3>
-                       <p className="text-slate-400 mb-6 text-sm">Perfect for small teams</p>
 
-                       <div className="flex items-baseline gap-1 mb-6">
-                          <span className="text-5xl font-black text-white tracking-tighter">$199</span>
-                          <span className="text-xl font-bold text-slate-400">/mo</span>
+                       <div className="mb-8">
+                          <div className="flex items-baseline gap-1 mb-2">
+                             <span className="text-5xl font-black text-white tracking-tighter">$199</span>
+                             <span className="text-xl font-bold text-slate-400">/mo</span>
+                          </div>
+                          <div className="flex items-center gap-2 text-brand-300 font-bold">
+                             <Users className="w-5 h-5" />
+                             <span className="text-lg">Up to 5 Users</span>
+                          </div>
+                       </div>
+
+                       <div className="mb-6 pb-6 border-b border-slate-700">
+                          <p className="text-slate-400 text-sm font-medium">Full Platform Access:</p>
                        </div>
 
                        <ul className="space-y-3 mb-8">
                           {[
-                              "Up to 5 Users",
-                              "Unlimited Document Storage",
                               "AI Supplement Automation",
                               "Code Database Access",
-                              "Email Support"
+                              "Unlimited Document Storage",
+                              "Policy Decoder",
+                              "Automated Rebuttals"
                           ].map((item, i) => (
                               <li key={i} className="flex items-center gap-3 text-slate-300 text-sm">
                                   <div className="bg-green-500/20 p-1 rounded-full"><Check className="w-4 h-4 text-green-400" /></div>
@@ -661,22 +669,29 @@ export const LandingPage: React.FC = () => {
                        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 shadow-lg shadow-orange-500/20">
                           <Sparkles className="w-3 h-3 fill-current" /> Beta Pricing
                        </div>
-                       <h3 className="text-2xl font-extrabold text-white mb-2 tracking-tight">Growth</h3>
-                       <p className="text-slate-400 mb-6 text-sm">For growing businesses</p>
 
-                       <div className="flex items-baseline gap-1 mb-6">
-                          <span className="text-5xl font-black text-white tracking-tighter">$499</span>
-                          <span className="text-xl font-bold text-slate-400">/mo</span>
+                       <div className="mb-8">
+                          <div className="flex items-baseline gap-1 mb-2">
+                             <span className="text-5xl font-black text-white tracking-tighter">$499</span>
+                             <span className="text-xl font-bold text-slate-400">/mo</span>
+                          </div>
+                          <div className="flex items-center gap-2 text-brand-300 font-bold">
+                             <Users className="w-5 h-5" />
+                             <span className="text-lg">Up to 15 Users</span>
+                          </div>
+                       </div>
+
+                       <div className="mb-6 pb-6 border-b border-slate-700">
+                          <p className="text-slate-400 text-sm font-medium">Full Platform Access:</p>
                        </div>
 
                        <ul className="space-y-3 mb-8">
                           {[
-                              "Up to 15 Users",
-                              "Unlimited Document Storage",
                               "AI Supplement Automation",
                               "Code Database Access",
-                              "Priority Support",
-                              "Dedicated Success Manager"
+                              "Unlimited Document Storage",
+                              "Policy Decoder",
+                              "Automated Rebuttals"
                           ].map((item, i) => (
                               <li key={i} className="flex items-center gap-3 text-slate-300 text-sm">
                                   <div className="bg-green-500/20 p-1 rounded-full"><Check className="w-4 h-4 text-green-400" /></div>
@@ -703,23 +718,29 @@ export const LandingPage: React.FC = () => {
                        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 shadow-lg shadow-orange-500/20">
                           <Sparkles className="w-3 h-3 fill-current" /> Beta Pricing
                        </div>
-                       <h3 className="text-2xl font-extrabold text-white mb-2 tracking-tight">Enterprise</h3>
-                       <p className="text-brand-100 mb-6 text-sm">Unlimited everything</p>
 
-                       <div className="flex items-baseline gap-1 mb-6">
-                          <span className="text-5xl font-black text-white tracking-tighter">$999</span>
-                          <span className="text-xl font-bold text-brand-100">/mo</span>
+                       <div className="mb-8">
+                          <div className="flex items-baseline gap-1 mb-2">
+                             <span className="text-5xl font-black text-white tracking-tighter">$999</span>
+                             <span className="text-xl font-bold text-brand-100">/mo</span>
+                          </div>
+                          <div className="flex items-center gap-2 text-white font-bold">
+                             <Users className="w-5 h-5" />
+                             <span className="text-lg">Unlimited Users</span>
+                          </div>
+                       </div>
+
+                       <div className="mb-6 pb-6 border-b border-white/20">
+                          <p className="text-brand-100 text-sm font-medium">Full Platform Access:</p>
                        </div>
 
                        <ul className="space-y-3 mb-8">
                           {[
-                              "Unlimited Users",
-                              "Unlimited Document Storage",
                               "AI Supplement Automation",
                               "Code Database Access",
-                              "Priority Feature Access",
-                              "Dedicated Success Manager",
-                              "White Glove Onboarding"
+                              "Unlimited Document Storage",
+                              "Policy Decoder",
+                              "Automated Rebuttals"
                           ].map((item, i) => (
                               <li key={i} className="flex items-center gap-3 text-white text-sm font-medium">
                                   <div className="bg-white/20 p-1 rounded-full"><Check className="w-4 h-4 text-white" /></div>
