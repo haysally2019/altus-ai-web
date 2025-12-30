@@ -557,7 +557,7 @@ export const LandingPage: React.FC = () => {
                 <div className="col-span-1">FEATURE</div>
                 <div className="col-span-1 text-center text-slate-400">OLD WAY</div>
                 <div className="col-span-1 text-center text-brand-400 flex items-center justify-center gap-2">
-                   <Zap className="w-5 h-5" /> ALTUS AI
+                   <Zap className="w-5 h-5" /> RAFTER AI
                 </div>
              </div>
              {[
