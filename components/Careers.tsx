@@ -191,10 +191,41 @@ export default function Careers({ onBack }: CareersProps) {
 
             <form
               className="p-5 sm:p-6 md:p-8"
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
-                alert('Application submitted successfully! We will review your application and get back to you within 2-3 business days.');
-                setShowApplicationForm(false);
+
+                const form = e.currentTarget;
+                const formData = {
+                  first_name: (form.elements.namedItem('firstName') as HTMLInputElement).value,
+                  last_name: (form.elements.namedItem('lastName') as HTMLInputElement).value,
+                  email: (form.elements.namedItem('email') as HTMLInputElement).value,
+                  phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
+                  experience: (form.elements.namedItem('experience') as HTMLSelectElement).value,
+                  linkedin: (form.elements.namedItem('linkedin') as HTMLInputElement).value,
+                  cover_letter: (form.elements.namedItem('coverLetter') as HTMLTextAreaElement).value
+                };
+
+                try {
+                  const response = await fetch('https://tipouhkjveytwatpidsi.supabase.co/functions/v1/submit-application', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                  });
+
+                  const result = await response.json();
+
+                  if (response.ok) {
+                    alert('Application submitted successfully! We will review your application and get back to you within 2-3 business days.');
+                    form.reset();
+                    setShowApplicationForm(false);
+                  } else {
+                    alert('Error: ' + result.error);
+                  }
+                } catch (error) {
+                  alert('Failed to submit application. Please try again.');
+                }
               }}
             >
               <div className="space-y-5 sm:space-y-6">
@@ -205,6 +236,7 @@ export default function Careers({ onBack }: CareersProps) {
                     </label>
                     <input
                       type="text"
+                      name="firstName"
                       required
                       className="w-full border-2 border-slate-200 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-slate-900 placeholder-slate-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all"
                       placeholder="John"
@@ -216,6 +248,7 @@ export default function Careers({ onBack }: CareersProps) {
                     </label>
                     <input
                       type="text"
+                      name="lastName"
                       required
                       className="w-full border-2 border-slate-200 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-slate-900 placeholder-slate-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all"
                       placeholder="Doe"
@@ -229,6 +262,7 @@ export default function Careers({ onBack }: CareersProps) {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     required
                     className="w-full border-2 border-slate-200 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-slate-900 placeholder-slate-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all"
                     placeholder="john.doe@email.com"
@@ -241,6 +275,7 @@ export default function Careers({ onBack }: CareersProps) {
                   </label>
                   <input
                     type="tel"
+                    name="phone"
                     required
                     className="w-full border-2 border-slate-200 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-slate-900 placeholder-slate-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all"
                     placeholder="+1 (555) 123-4567"
@@ -252,6 +287,7 @@ export default function Careers({ onBack }: CareersProps) {
                     Years of Sales Experience <span className="text-red-500">*</span>
                   </label>
                   <select
+                    name="experience"
                     required
                     className="w-full border-2 border-slate-200 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-slate-900 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all"
                   >
@@ -270,6 +306,7 @@ export default function Careers({ onBack }: CareersProps) {
                   </label>
                   <input
                     type="url"
+                    name="linkedin"
                     className="w-full border-2 border-slate-200 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-slate-900 placeholder-slate-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all"
                     placeholder="https://linkedin.com/in/yourprofile"
                   />
@@ -280,6 +317,7 @@ export default function Careers({ onBack }: CareersProps) {
                     Why are you a great fit? <span className="text-red-500">*</span>
                   </label>
                   <textarea
+                    name="coverLetter"
                     required
                     rows={5}
                     className="w-full border-2 border-slate-200 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-slate-900 placeholder-slate-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all resize-none"
