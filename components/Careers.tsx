@@ -1,5 +1,5 @@
-import React from 'react';
-import { Users, Check, Sparkles, Mail, Zap, ArrowLeft } from 'lucide-react';
+import React, { useState } from 'react';
+import { Users, Check, Sparkles, Zap, ArrowLeft, DollarSign, TrendingUp, BarChart3, X } from 'lucide-react';
 import { Button } from './ui/Button';
 
 interface CareersProps {
@@ -7,6 +7,8 @@ interface CareersProps {
 }
 
 export default function Careers({ onBack }: CareersProps) {
+  const [showApplicationForm, setShowApplicationForm] = useState(false);
+
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
@@ -55,8 +57,11 @@ export default function Careers({ onBack }: CareersProps) {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-3xl font-bold text-white mb-3">Sales Representatives</h3>
+                  <div className="inline-block bg-brand-600/20 border border-brand-500 rounded-full px-4 py-1 mb-4">
+                    <span className="text-brand-300 font-bold text-sm">COMMISSION ONLY - UNLIMITED EARNING POTENTIAL</span>
+                  </div>
                   <p className="text-slate-300 text-lg leading-relaxed mb-6">
-                    We're looking for driven sales professionals to join our growing team. Help restoration contractors discover how AI can transform their business.
+                    We're looking for driven sales professionals to join our growing team. Help restoration contractors discover how AI can transform their business while earning generous commissions on every sale.
                   </p>
 
                   <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -91,80 +96,207 @@ export default function Careers({ onBack }: CareersProps) {
                       <ul className="space-y-2 text-slate-300">
                         <li className="flex items-start gap-2">
                           <span className="text-brand-400 mt-1">•</span>
-                          <span>Competitive base + commission</span>
+                          <span>Generous commission structure</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-brand-400 mt-1">•</span>
-                          <span>Fast-growing startup environment</span>
+                          <span>Advanced SaaS CRM access included</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-brand-400 mt-1">•</span>
-                          <span>Remote-friendly culture</span>
+                          <span>100% remote - work from anywhere</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-brand-400 mt-1">•</span>
-                          <span>Sell cutting-edge AI technology</span>
+                          <span>High-ticket B2B sales ($299-$599/mo)</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-brand-400 mt-1">•</span>
+                          <span>Warm leads & proven sales materials</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-brand-400 mt-1">•</span>
+                          <span>Fast-growing AI technology company</span>
                         </li>
                       </ul>
                     </div>
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-slate-700">
+                  <div className="pt-6 border-t border-slate-700">
                     <Button
-                      onClick={() => window.location.href = 'mailto:careers@rafter.ai?subject=Sales Representative Application'}
+                      onClick={() => setShowApplicationForm(true)}
                       variant="primary"
-                      className="font-bold shadow-xl"
+                      className="font-bold shadow-xl w-full sm:w-auto"
                       size="lg"
                     >
                       Apply Now
                     </Button>
-                    <a
-                      href="mailto:careers@rafter.ai"
-                      className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-slate-700/50 text-white font-semibold hover:bg-slate-700 transition-colors"
-                    >
-                      <Mail className="w-5 h-5" />
-                      careers@rafter.ai
-                    </a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Why Join Us */}
+          {/* Compensation & Benefits Highlights */}
           <div className="mt-16 grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200">
-              <div className="bg-brand-100 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
-                <Zap className="w-7 h-7 text-brand-600" />
+              <div className="bg-emerald-100 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                <DollarSign className="w-7 h-7 text-emerald-600" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Cutting-Edge Tech</h3>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Generous Commissions</h3>
               <p className="text-slate-600 leading-relaxed">
-                Work with the latest AI technology powered by Google Gemini, solving real problems for real businesses.
+                Earn uncapped commissions on every sale. Top performers make $5K-$15K+ per month selling high-value SaaS subscriptions.
               </p>
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200">
               <div className="bg-brand-100 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
-                <Users className="w-7 h-7 text-brand-600" />
+                <BarChart3 className="w-7 h-7 text-brand-600" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Growing Team</h3>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Advanced CRM Tools</h3>
               <p className="text-slate-600 leading-relaxed">
-                Join a fast-growing startup where your contributions directly impact our success and growth trajectory.
+                Get full access to our premium SaaS CRM platform to manage leads, track deals, and optimize your sales pipeline.
               </p>
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200">
               <div className="bg-brand-100 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
-                <Sparkles className="w-7 h-7 text-brand-600" />
+                <TrendingUp className="w-7 h-7 text-brand-600" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Make an Impact</h3>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Recurring Revenue</h3>
               <p className="text-slate-600 leading-relaxed">
-                Help contractors maximize their claims and grow their businesses with AI-powered solutions.
+                Build passive income with recurring commission structures. Once you close a deal, earn monthly as long as they stay subscribed.
               </p>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Application Form Modal */}
+      {showApplicationForm && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+            <div className="sticky top-0 bg-gradient-to-br from-brand-600 to-brand-800 p-8 rounded-t-3xl">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h2 className="text-3xl font-bold text-white mb-2">Apply Now</h2>
+                  <p className="text-brand-100">Join our team of top sales professionals</p>
+                </div>
+                <button
+                  onClick={() => setShowApplicationForm(false)}
+                  className="text-white hover:bg-white/20 rounded-lg p-2 transition-colors"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+            </div>
+
+            <form
+              className="p-8 space-y-6"
+              onSubmit={(e) => {
+                e.preventDefault();
+                alert('Application submitted successfully! We will review your application and get back to you within 2-3 business days.');
+                setShowApplicationForm(false);
+              }}
+            >
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-bold text-slate-700 mb-2">First Name *</label>
+                  <input
+                    type="text"
+                    required
+                    className="w-full border border-slate-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all"
+                    placeholder="John"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold text-slate-700 mb-2">Last Name *</label>
+                  <input
+                    type="text"
+                    required
+                    className="w-full border border-slate-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all"
+                    placeholder="Doe"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold text-slate-700 mb-2">Email *</label>
+                <input
+                  type="email"
+                  required
+                  className="w-full border border-slate-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all"
+                  placeholder="john.doe@email.com"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold text-slate-700 mb-2">Phone Number *</label>
+                <input
+                  type="tel"
+                  required
+                  className="w-full border border-slate-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all"
+                  placeholder="+1 (555) 123-4567"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold text-slate-700 mb-2">Years of Sales Experience *</label>
+                <select
+                  required
+                  className="w-full border border-slate-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all"
+                >
+                  <option value="">Select experience level</option>
+                  <option value="0-1">Less than 1 year</option>
+                  <option value="1-3">1-3 years</option>
+                  <option value="3-5">3-5 years</option>
+                  <option value="5-10">5-10 years</option>
+                  <option value="10+">10+ years</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold text-slate-700 mb-2">LinkedIn Profile URL</label>
+                <input
+                  type="url"
+                  className="w-full border border-slate-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all"
+                  placeholder="https://linkedin.com/in/yourprofile"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold text-slate-700 mb-2">
+                  Tell us about your sales experience and why you're a great fit *
+                </label>
+                <textarea
+                  required
+                  rows={5}
+                  className="w-full border border-slate-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all"
+                  placeholder="Describe your B2B/SaaS sales experience, your biggest achievements, and what motivates you..."
+                />
+              </div>
+
+              <div className="flex gap-4">
+                <Button
+                  type="submit"
+                  variant="primary"
+                  className="flex-1 font-bold"
+                  size="lg"
+                >
+                  Submit Application
+                </Button>
+                <button
+                  type="button"
+                  onClick={() => setShowApplicationForm(false)}
+                  className="px-6 py-3 bg-slate-200 text-slate-700 font-semibold rounded-xl hover:bg-slate-300 transition-colors"
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="bg-slate-950 text-slate-400 py-16 border-t border-slate-800">
