@@ -108,7 +108,7 @@ export default function Careers({ onBack }: CareersProps) {
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-brand-400 mt-1">•</span>
-                          <span>High-ticket B2B sales ($299-$599/mo)</span>
+                          <span>High ticket B2B sales</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-brand-400 mt-1">•</span>
