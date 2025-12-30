@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Users, Check, Sparkles, Zap, ArrowLeft, DollarSign, TrendingUp, BarChart3, X } from 'lucide-react';
+import { Users, Check, Sparkles, Zap, ArrowLeft, DollarSign, TrendingUp, ChartBar as BarChart3, X } from 'lucide-react';
 import { Button } from './ui/Button';
 
 interface CareersProps {
