@@ -206,11 +206,10 @@ export default function Careers({ onBack }: CareersProps) {
                 };
 
                 try {
-                  const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/submit-application`, {
+                  const response = await fetch('https://tipouhkjveytwatpidsi.supabase.co/functions/v1/submit-application', {
                     method: 'POST',
                     headers: {
                       'Content-Type': 'application/json',
-                      'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
                     },
                     body: JSON.stringify(formData)
                   });
