@@ -793,6 +793,100 @@ export const LandingPage: React.FC = () => {
          </div>
       </section>
 
+      {/* Careers Section */}
+      <section id="careers" className="py-24 bg-white">
+         <div className="max-w-5xl mx-auto px-4">
+            <div className="text-center mb-16">
+               <h2 className="text-4xl font-extrabold text-slate-900 mb-4">Join Our Team</h2>
+               <p className="text-xl text-slate-600">Help contractors transform their businesses with AI</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl shadow-2xl overflow-hidden border border-slate-700">
+               <div className="p-10 md:p-12">
+                  <div className="flex items-start gap-6 mb-8">
+                     <div className="bg-brand-600 rounded-2xl p-4 flex-shrink-0">
+                        <Users className="w-8 h-8 text-white" />
+                     </div>
+                     <div className="flex-1">
+                        <h3 className="text-3xl font-bold text-white mb-3">Sales Representatives</h3>
+                        <p className="text-slate-300 text-lg leading-relaxed mb-6">
+                           We're looking for driven sales professionals to join our growing team. Help restoration contractors discover how AI can transform their business.
+                        </p>
+
+                        <div className="grid md:grid-cols-2 gap-6 mb-8">
+                           <div>
+                              <h4 className="text-brand-400 font-bold mb-3 flex items-center gap-2">
+                                 <Check className="w-5 h-5" /> What You'll Do
+                              </h4>
+                              <ul className="space-y-2 text-slate-300">
+                                 <li className="flex items-start gap-2">
+                                    <span className="text-brand-400 mt-1">•</span>
+                                    <span>Connect with restoration contractors</span>
+                                 </li>
+                                 <li className="flex items-start gap-2">
+                                    <span className="text-brand-400 mt-1">•</span>
+                                    <span>Demo our AI platform</span>
+                                 </li>
+                                 <li className="flex items-start gap-2">
+                                    <span className="text-brand-400 mt-1">•</span>
+                                    <span>Close deals and drive growth</span>
+                                 </li>
+                                 <li className="flex items-start gap-2">
+                                    <span className="text-brand-400 mt-1">•</span>
+                                    <span>Build lasting client relationships</span>
+                                 </li>
+                              </ul>
+                           </div>
+
+                           <div>
+                              <h4 className="text-brand-400 font-bold mb-3 flex items-center gap-2">
+                                 <Sparkles className="w-5 h-5" /> What We Offer
+                              </h4>
+                              <ul className="space-y-2 text-slate-300">
+                                 <li className="flex items-start gap-2">
+                                    <span className="text-brand-400 mt-1">•</span>
+                                    <span>Competitive base + commission</span>
+                                 </li>
+                                 <li className="flex items-start gap-2">
+                                    <span className="text-brand-400 mt-1">•</span>
+                                    <span>Fast-growing startup environment</span>
+                                 </li>
+                                 <li className="flex items-start gap-2">
+                                    <span className="text-brand-400 mt-1">•</span>
+                                    <span>Remote-friendly culture</span>
+                                 </li>
+                                 <li className="flex items-start gap-2">
+                                    <span className="text-brand-400 mt-1">•</span>
+                                    <span>Sell cutting-edge AI technology</span>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-slate-700">
+                           <Button
+                              onClick={() => window.location.href = 'mailto:careers@rafter.ai?subject=Sales Representative Application'}
+                              variant="primary"
+                              className="font-bold shadow-xl"
+                              size="lg"
+                           >
+                              Apply Now
+                           </Button>
+                           <a
+                              href="mailto:careers@rafter.ai"
+                              className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-slate-700/50 text-white font-semibold hover:bg-slate-700 transition-colors"
+                           >
+                              <Mail className="w-5 h-5" />
+                              careers@rafter.ai
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
       {/* CTA Bottom */}
       <section className="py-32 bg-gradient-to-br from-brand-600 to-brand-800 relative overflow-hidden">
          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 mix-blend-overlay"></div>
