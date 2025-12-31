@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Users, Check, Sparkles, Zap, ArrowLeft, DollarSign, TrendingUp, ChartBar as BarChart3, X } from 'lucide-react';
+import React from 'react';
+import { Users, Check, Sparkles, Zap, ArrowLeft, DollarSign, TrendingUp, ChartBar as BarChart3 } from 'lucide-react';
 import { Button } from './ui/Button';
 
 interface CareersProps {
@@ -7,7 +7,6 @@ interface CareersProps {
 }
 
 export default function Careers({ onBack }: CareersProps) {
-  const [showApplicationForm, setShowApplicationForm] = useState(false);
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -123,14 +122,19 @@ export default function Careers({ onBack }: CareersProps) {
                   </div>
 
                   <div className="pt-6 sm:pt-8 border-t border-slate-700">
-                    <Button
-                      onClick={() => setShowApplicationForm(true)}
-                      variant="primary"
-                      className="font-bold shadow-xl w-full sm:w-auto px-8"
-                      size="lg"
+                    <a
+                      href="https://rafteraicrm.online/apply"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      Apply Now
-                    </Button>
+                      <Button
+                        variant="primary"
+                        className="font-bold shadow-xl w-full sm:w-auto px-8"
+                        size="lg"
+                      >
+                        Apply Now
+                      </Button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -171,182 +175,6 @@ export default function Careers({ onBack }: CareersProps) {
           </div>
         </div>
       </section>
-
-      {/* Application Form Modal */}
-      {showApplicationForm && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-3 sm:p-4">
-          <div className="bg-white rounded-xl sm:rounded-2xl max-w-3xl w-full max-h-[95vh] sm:max-h-[92vh] overflow-y-auto shadow-2xl">
-            <div className="sticky top-0 bg-gradient-to-r from-brand-600 to-brand-700 px-5 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 flex items-center justify-between">
-              <div className="flex-1 pr-3">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white">Apply for Sales Representative</h2>
-                <p className="text-brand-100 text-xs sm:text-sm mt-1">Join our team of top performers</p>
-              </div>
-              <button
-                onClick={() => setShowApplicationForm(false)}
-                className="text-white hover:bg-white/20 rounded-full p-1.5 sm:p-2 transition-colors flex-shrink-0"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            <form
-              className="p-5 sm:p-6 md:p-8"
-              onSubmit={async (e) => {
-                e.preventDefault();
-
-                const form = e.currentTarget;
-                const formData = {
-                  first_name: (form.elements.namedItem('firstName') as HTMLInputElement).value,
-                  last_name: (form.elements.namedItem('lastName') as HTMLInputElement).value,
-                  email: (form.elements.namedItem('email') as HTMLInputElement).value,
-                  phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
-                  experience: (form.elements.namedItem('experience') as HTMLSelectElement).value,
-                  linkedin: (form.elements.namedItem('linkedin') as HTMLInputElement).value,
-                  cover_letter: (form.elements.namedItem('coverLetter') as HTMLTextAreaElement).value
-                };
-
-                try {
-                  const response = await fetch('https://tipouhkjveytwatpidsi.supabase.co/functions/v1/submit-application', {
-                    method: 'POST',
-                    headers: {
-                      'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData)
-                  });
-
-                  const result = await response.json();
-
-                  if (response.ok) {
-                    alert('Application submitted successfully! We will review your application and get back to you within 2-3 business days.');
-                    form.reset();
-                    setShowApplicationForm(false);
-                  } else {
-                    alert('Error: ' + result.error);
-                  }
-                } catch (error) {
-                  alert('Failed to submit application. Please try again.');
-                }
-              }}
-            >
-              <div className="space-y-5 sm:space-y-6">
-                <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
-                  <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">
-                      First Name <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      name="firstName"
-                      required
-                      className="w-full border-2 border-slate-200 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-slate-900 placeholder-slate-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all"
-                      placeholder="John"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">
-                      Last Name <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      name="lastName"
-                      required
-                      className="w-full border-2 border-slate-200 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-slate-900 placeholder-slate-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all"
-                      placeholder="Doe"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">
-                    Email <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    className="w-full border-2 border-slate-200 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-slate-900 placeholder-slate-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all"
-                    placeholder="john.doe@email.com"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">
-                    Phone Number <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    required
-                    className="w-full border-2 border-slate-200 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-slate-900 placeholder-slate-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all"
-                    placeholder="+1 (555) 123-4567"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">
-                    Years of Sales Experience <span className="text-red-500">*</span>
-                  </label>
-                  <select
-                    name="experience"
-                    required
-                    className="w-full border-2 border-slate-200 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-slate-900 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all"
-                  >
-                    <option value="">Select experience level</option>
-                    <option value="0-1">Less than 1 year</option>
-                    <option value="1-3">1-3 years</option>
-                    <option value="3-5">3-5 years</option>
-                    <option value="5-10">5-10 years</option>
-                    <option value="10+">10+ years</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">
-                    LinkedIn Profile URL
-                  </label>
-                  <input
-                    type="url"
-                    name="linkedin"
-                    className="w-full border-2 border-slate-200 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-slate-900 placeholder-slate-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all"
-                    placeholder="https://linkedin.com/in/yourprofile"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">
-                    Why are you a great fit? <span className="text-red-500">*</span>
-                  </label>
-                  <textarea
-                    name="coverLetter"
-                    required
-                    rows={5}
-                    className="w-full border-2 border-slate-200 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-slate-900 placeholder-slate-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all resize-none"
-                    placeholder="Tell us about your B2B/SaaS sales experience, biggest achievements, and what motivates you..."
-                  />
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-3 mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-slate-200">
-                <Button
-                  type="submit"
-                  variant="primary"
-                  className="flex-1 font-semibold order-1 sm:order-1"
-                  size="lg"
-                >
-                  Submit Application
-                </Button>
-                <button
-                  type="button"
-                  onClick={() => setShowApplicationForm(false)}
-                  className="px-6 sm:px-8 py-3 bg-slate-100 text-slate-700 font-semibold rounded-lg hover:bg-slate-200 transition-colors order-2 sm:order-2"
-                >
-                  Cancel
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
 
       {/* Footer */}
       <footer className="bg-slate-950 text-slate-400 py-10 sm:py-12 md:py-16 border-t border-slate-800">
