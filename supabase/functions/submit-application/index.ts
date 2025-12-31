@@ -55,7 +55,7 @@ Deno.serve(async (req: Request) => {
     if (error) {
       console.error("Database error:", error);
       return new Response(
-        JSON.stringify({ error: "Failed to submit application" }),
+        JSON.stringify({ error: "Failed to submit application", details: error.message }),
         {
           status: 500,
           headers: {
@@ -79,7 +79,7 @@ Deno.serve(async (req: Request) => {
   } catch (error) {
     console.error("Error processing request:", error);
     return new Response(
-      JSON.stringify({ error: "Internal server error" }),
+      JSON.stringify({ error: "Internal server error", details: error.message }),
       {
         status: 500,
         headers: {
