@@ -432,7 +432,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onCareersClick }) => {
                  { icon: FileSearch, color: 'blue', title: 'Policy Decoder', desc: 'Gemini reads entire policies in seconds. It highlights "Law and Ordinance" coverage and exclusions so you know exactly what is covered before you file.' },
                  { icon: Scale, color: 'purple', title: 'Automated Rebuttals', desc: 'Stop typing emails. Generate professional supplement letters that cite specific building codes (IRC/IBC) and manufacturer specs automatically.' },
                  { icon: TrendingUp, color: 'green', title: 'Blind Spot Detection', desc: 'Our AI scans the scope against your drone photos. It finds missing drip edge, ice & water shield, and waste calculation errors instantly.' },
-                 { icon: Users, color: 'blue', title: 'Claims-Tailored CRM', desc: 'Built specifically for insurance restoration. Track claim status, adjuster contacts, supplement history, and policy details in one unified dashboard designed for contractors.' },
+                 { icon: Users, color: 'blue', title: 'Built-In CRM', desc: 'Track every lead, job, and follow-up in one place. Automated pipeline management keeps your sales organized without the complexity of traditional CRM systems.' },
                  { icon: DollarSign, color: 'green', title: 'Payment Links', desc: 'Get paid faster with one-click payment links. Send professional invoices with embedded secure payment options that integrate directly with your estimates.' }
                ].map((feature, i) => (
                  <div key={i} className="text-left group hover:-translate-y-1 transition-transform duration-300">
@@ -458,7 +458,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onCareersClick }) => {
                <p className="text-xl text-slate-400 font-light leading-relaxed">RAFTER AI isn't just a supplement tool. It's a full-service employee that answers phones and writes estimates 24/7.</p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-20">
+            <div className="grid lg:grid-cols-3 gap-8">
                
                {/* Feature 1: AI Receptionist */}
                <div className="relative group">
@@ -543,6 +543,50 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onCareersClick }) => {
                          <div className="absolute bottom-4 right-4 bg-green-500 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1">
                             <Check className="w-3 h-3" /> Ready to Send
                          </div>
+                     </div>
+                  </div>
+               </div>
+
+               {/* Feature 3: Claims-Tailored CRM */}
+               <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                  <div className="relative bg-slate-800 rounded-2xl p-8 h-full border border-slate-700/50">
+                     <div className="w-14 h-14 bg-green-900/50 rounded-xl flex items-center justify-center mb-6 border border-green-500/20">
+                        <Users className="w-7 h-7 text-green-400" />
+                     </div>
+                     <h3 className="text-2xl font-bold text-white mb-4">Insurance Claims CRM</h3>
+                     <p className="text-slate-400 mb-8 leading-relaxed">
+                        Built specifically for restoration contractors. Track claim status, adjuster contacts, supplement history, and policy details in one unified dashboard.
+                     </p>
+
+                     {/* CRM Dashboard Visualization */}
+                     <div className="bg-slate-900 rounded-xl p-4 border border-slate-700/50 space-y-3">
+                        <div className="flex items-center justify-between pb-2 border-b border-slate-700/50">
+                           <span className="text-xs font-bold text-slate-400">ACTIVE CLAIMS</span>
+                           <span className="text-xs font-bold text-green-400">12</span>
+                        </div>
+                        <div className="space-y-2">
+                           <div className="bg-slate-800 p-3 rounded-lg border border-slate-700/50">
+                              <div className="flex justify-between items-start mb-2">
+                                 <span className="text-sm font-bold text-white">Claim #45892</span>
+                                 <span className="text-xs px-2 py-0.5 rounded-full bg-yellow-900/40 text-yellow-400 border border-yellow-500/20">Supplement Pending</span>
+                              </div>
+                              <div className="text-xs text-slate-400 space-y-1">
+                                 <div>Adjuster: John Smith</div>
+                                 <div>Policy: State Farm #8829</div>
+                              </div>
+                           </div>
+                           <div className="bg-slate-800 p-3 rounded-lg border border-slate-700/50">
+                              <div className="flex justify-between items-start mb-2">
+                                 <span className="text-sm font-bold text-white">Claim #45891</span>
+                                 <span className="text-xs px-2 py-0.5 rounded-full bg-green-900/40 text-green-400 border border-green-500/20">Approved</span>
+                              </div>
+                              <div className="text-xs text-slate-400 space-y-1">
+                                 <div>Adjuster: Sarah Johnson</div>
+                                 <div>Policy: Allstate #7743</div>
+                              </div>
+                           </div>
+                        </div>
                      </div>
                   </div>
                </div>
