@@ -710,9 +710,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onCareersClick }) => {
 
                 {/* Growth Plan */}
                 <div className="bg-slate-900 rounded-3xl shadow-2xl overflow-hidden flex flex-col transform hover:scale-[1.02] transition-transform duration-300 border-2 border-brand-500 relative">
-                   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest shadow-lg">
-                      Most Popular
-                   </div>
                    <div className="p-8 flex-1">
                        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 shadow-lg shadow-orange-500/20">
                           <Sparkles className="w-3 h-3 fill-current" /> Beta Pricing
@@ -799,9 +796,12 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onCareersClick }) => {
                    </div>
 
                    <div className="p-8 pt-0 relative z-10">
-                       <Button onClick={handleCtaClick} variant="primary" className="w-full font-bold h-12 shadow-xl bg-white text-brand-600 hover:bg-slate-50">
+                       <button
+                          onClick={handleCtaClick}
+                          className="w-full h-12 bg-white text-brand-600 hover:bg-slate-50 rounded-lg font-bold transition-colors shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
+                       >
                           Start Free Trial
-                       </Button>
+                       </button>
                        <p className="text-xs text-brand-100 mt-4 text-center font-medium flex items-center justify-center gap-2">
                           <Lock className="w-3 h-3" /> Lifetime Price Lock
                        </p>
