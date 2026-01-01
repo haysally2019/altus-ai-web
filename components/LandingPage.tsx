@@ -432,7 +432,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onCareersClick }) => {
                  { icon: FileSearch, color: 'blue', title: 'Policy Decoder', desc: 'Gemini reads entire policies in seconds. It highlights "Law and Ordinance" coverage and exclusions so you know exactly what is covered before you file.' },
                  { icon: Scale, color: 'purple', title: 'Automated Rebuttals', desc: 'Stop typing emails. Generate professional supplement letters that cite specific building codes (IRC/IBC) and manufacturer specs automatically.' },
                  { icon: TrendingUp, color: 'green', title: 'Blind Spot Detection', desc: 'Our AI scans the scope against your drone photos. It finds missing drip edge, ice & water shield, and waste calculation errors instantly.' },
-                 { icon: Users, color: 'blue', title: 'Built-In CRM', desc: 'Track every lead, job, and follow-up in one place. Automated pipeline management keeps your sales organized without the complexity of traditional CRM systems.' },
+                 { icon: Users, color: 'blue', title: 'Claims-Tailored CRM', desc: 'Built specifically for insurance restoration. Track claim status, adjuster contacts, supplement history, and policy details in one unified dashboard designed for contractors.' },
                  { icon: DollarSign, color: 'green', title: 'Payment Links', desc: 'Get paid faster with one-click payment links. Send professional invoices with embedded secure payment options that integrate directly with your estimates.' }
                ].map((feature, i) => (
                  <div key={i} className="text-left group hover:-translate-y-1 transition-transform duration-300">
