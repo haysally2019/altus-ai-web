@@ -70,9 +70,17 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
 
 interface LandingPageProps {
   onCareersClick: () => void;
+  onPrivacyClick: () => void;
+  onTermsClick: () => void;
+  onSecurityClick: () => void;
 }
 
-export const LandingPage: React.FC<LandingPageProps> = ({ onCareersClick }) => {
+export const LandingPage: React.FC<LandingPageProps> = ({
+  onCareersClick,
+  onPrivacyClick,
+  onTermsClick,
+  onSecurityClick
+}) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   // ROI Calculator State
@@ -177,24 +185,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onCareersClick }) => {
              </div>
           </div>
         );
-      case 'privacy':
-      case 'terms':
-      case 'security':
-        return (
-          <div className="space-y-4 text-slate-600 leading-relaxed">
-             <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg flex items-start gap-3 mb-6">
-                <Lock className="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" />
-                <div>
-                   <h4 className="font-bold text-yellow-800 text-sm">Enterprise Grade Security</h4>
-                   <p className="text-yellow-700 text-xs mt-1">We are SOC 2 Type II compliant and fully encrypted.</p>
-                </div>
-             </div>
-             <p><strong>Last Updated: October 2024</strong></p>
-             <p>This is a placeholder for the full legal text. In a production environment, this would contain the complete {activeModal === 'privacy' ? 'Privacy Policy' : activeModal === 'terms' ? 'Terms of Service' : 'Security Documentation'}.</p>
-             <p>RAFTER AI prioritizes data sovereignty. Your estimates, client data, and pricing strategies are never shared with third parties or insurance carriers. We utilize Google Cloud Platform (GCP) with AES-256 encryption at rest and TLS 1.3 in transit.</p>
-             <p>For specific compliance requests (HIPAA, GDPR, CCPA), please contact our legal team at legal@rafter.ai.</p>
-          </div>
-        );
       default:
         return null;
     }
@@ -205,9 +195,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onCareersClick }) => {
         case 'contact': return 'Contact Support';
         case 'code-database': return 'ICC Code Database';
         case 'about': return 'About RAFTER AI';
-        case 'privacy': return 'Privacy Policy';
-        case 'terms': return 'Terms of Service';
-        case 'security': return 'Security & Compliance';
         default: return '';
      }
   };
@@ -897,9 +884,9 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onCareersClick }) => {
           <div>
             <h4 className="text-white font-bold mb-8 text-lg">Legal</h4>
             <ul className="space-y-4 text-base">
-                <li><button onClick={() => setActiveModal('privacy')} className="hover:text-brand-400 transition-colors">Privacy Policy</button></li>
-                <li><button onClick={() => setActiveModal('terms')} className="hover:text-brand-400 transition-colors">Terms of Service</button></li>
-                <li><button onClick={() => setActiveModal('security')} className="hover:text-brand-400 transition-colors">Security</button></li>
+                <li><button onClick={onPrivacyClick} className="hover:text-brand-400 transition-colors">Privacy Policy</button></li>
+                <li><button onClick={onTermsClick} className="hover:text-brand-400 transition-colors">Terms of Service</button></li>
+                <li><button onClick={onSecurityClick} className="hover:text-brand-400 transition-colors">Security</button></li>
             </ul>
           </div>
         </div>
